@@ -1,16 +1,23 @@
 package com.kawakawaplanning.onenightwerewolf;
 
+import android.content.DialogInterface;
 import android.graphics.Typeface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.NumberPicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.lang.reflect.Field;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-//        mToolBar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolBar);
 
         mMplusLight = Typeface.createFromAsset(getAssets(), "mplus-1c-light.ttf");
@@ -44,6 +50,30 @@ public class MainActivity extends AppCompatActivity {
         mStartBtn.setTypeface(mMplusLight);
         mWhatBtn.setTypeface(mMplusLight);
 
+    }
+
+    @OnClick(R.id.startBtn)
+    public void startBtn(){
+        LinearLayout ll = new LinearLayout(this);
+        ll.setOrientation(LinearLayout.VERTICAL);
+
+        final NumberPicker np = new NumberPicker(this);
+        np.setMinValue(3);
+        np.setMaxValue(10);
+        ll.addView(np);
+
+        new AlertDialog.Builder(this)
+                .setTitle("Set the number of participants")
+                .setCancelable(true)
+                .setPositiveButton("NEXT", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(MainActivity.this, "Select:" + np.getValue(), Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .setNegativeButton("CANSEL", null)
+                .setView(ll)
+                .show();
     }
 
     private TextView getActionBarTextView() {
