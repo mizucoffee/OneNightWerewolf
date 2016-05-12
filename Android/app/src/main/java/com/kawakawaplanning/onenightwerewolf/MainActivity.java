@@ -1,6 +1,7 @@
 package com.kawakawaplanning.onenightwerewolf;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -68,7 +69,10 @@ public class MainActivity extends AppCompatActivity {
                 .setPositiveButton("NEXT", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(MainActivity.this, "Select:" + np.getValue(), Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent();
+                        intent.setClass(MainActivity.this,SetPositionActivity.class);
+                        intent.putExtra("number",np.getValue());
+                        startActivity(intent);
                     }
                 })
                 .setNegativeButton("CANSEL", null)
