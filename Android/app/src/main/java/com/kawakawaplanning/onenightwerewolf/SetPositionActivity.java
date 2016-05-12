@@ -1,11 +1,17 @@
 package com.kawakawaplanning.onenightwerewolf;
 
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.Toolbar;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
+
+import com.rengwuxian.materialedittext.MaterialEditText;
 
 import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
 
@@ -69,13 +75,14 @@ public class SetPositionActivity extends AppCompatActivity {
         robberSb.setOnProgressChangeListener(onChange);
         minionSb.setOnProgressChangeListener(onChange);
         tannerSb.setOnProgressChangeListener(onChange);
+
     }
 
     public DiscreteSeekBar.OnProgressChangeListener onChange = new DiscreteSeekBar.OnProgressChangeListener() {
         @Override
         public void onProgressChanged(DiscreteSeekBar seekBar, int value, boolean fromUser) {
 
-            int v = count - (werewolfSb.getProgress() + seerSb.getProgress() + robberSb.getProgress() + minionSb.getProgress() + tannerSb.getProgress());
+            int v = count - (werewolfSb.getProgress() + seerSb.getProgress() + robberSb.getProgress() + minionSb.getProgress() + tannerSb.getProgress()) + 2;
 
             if (v >= 0) {
                 werewolf = werewolfSb.getProgress();
@@ -83,7 +90,7 @@ public class SetPositionActivity extends AppCompatActivity {
                 robber   = robberSb.getProgress();
                 minion   = minionSb.getProgress();
                 tanner   = tannerSb.getProgress();
-                villager = count - (werewolf + seer + robber + minion + tanner);
+                villager = count - (werewolf + seer + robber + minion + tanner) + 2;
             }else{
                 werewolfSb.setProgress(werewolf);
                 seerSb.setProgress(seer);
@@ -132,7 +139,7 @@ public class SetPositionActivity extends AppCompatActivity {
                 break;
         }
 
-        villager = count - (werewolf + seer + robber + minion + tanner);
+        villager = count - (werewolf + seer + robber + minion + tanner) + 2;
 
         werewolfTv.setText(":" + werewolf);
         seerTv.setText(":" + seer);
