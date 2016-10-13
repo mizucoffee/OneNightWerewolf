@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="fontloader-0.3.0">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/net.kianoni/fontloader/0.3.0/res" />
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/net.kianoni/fontloader/0.3.0/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.kianoni/fontloader/0.3.0/6f4f27542e1ef2fa0871db0085fa94d54ca12f12/fontloader-0.3.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

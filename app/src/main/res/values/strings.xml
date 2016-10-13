@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">OneNightWerewolf</string>
+
+    <string name="werewolf">人狼</string>
+    <string name="seer">占師</string>
+    <string name="robber">盗賊</string>
+    <string name="minion">狂人</string>
+    <string name="tanner">吊人</string>
+    <string name="villager">村人</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_jinro">JinroActivity</string>
+    <string name="action_settings">Settings</string>
+
+</resources>

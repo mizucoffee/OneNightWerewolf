@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.kawakawaplanning.onenightwerewolf">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true">
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/MorningTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SetPositionActivity"
+            android:theme="@style/DayTheme" />
+        <activity
+            android:name=".SetUsernameActivity"
+            android:theme="@style/EveningTheme" />
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="81d3359502772e5911bd72319039578847ffbbcd" />
+
+        <activity
+            android:name=".CardServeActivity"
+            android:theme="@style/NightTheme"></activity>
+        <activity
+            android:name=".CardActivity"
+            android:theme="@style/NightTheme"></activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,56 @@
+<resources>
+
+    <style name="MorningTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#B2EBF2</item> <!--100-->
+        <item name="colorPrimaryDark">#80DEEA</item> <!--200-->
+        <item name="colorAccent">#00897B</item>  <!--600-->
+        <item name="android:textColorPrimary">#004D40</item> <!--900-->
+        <item name="android:navigationBarColor">#80DEEA</item> <!--200-->
+        <item name="android:colorBackground">#E0F2F1</item> <!--50-->
+    </style>
+
+    <style name="EveningTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#ffcdd2</item>
+        <item name="colorPrimaryDark">#ef9a9a</item>
+        <item name="colorAccent">#e53935</item>
+        <item name="android:textColorPrimary">#b71c1c</item>
+        <item name="android:navigationBarColor">#ef9a9a</item>
+        <item name="android:colorBackground">#ffebee</item>
+        <item name="android:textColorHint">#aaaaaa</item>
+    </style>
+
+    <style name="MidNightTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#D1C4E9</item>
+        <item name="colorPrimaryDark">#B39DDB</item>
+        <item name="colorAccent">#5E35B1</item>
+        <item name="android:textColorPrimary">#311B92</item>
+        <item name="android:navigationBarColor">#B39DDB</item>
+        <item name="android:colorBackground">#EDE7F6</item>
+    </style>
+
+    <style name="NightTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#C5CAE9</item>
+        <item name="colorPrimaryDark">#9FA8DA</item>
+        <item name="colorAccent">#3949AB</item>
+        <item name="android:textColorPrimary">#1A237E</item>
+        <item name="android:navigationBarColor">#9FA8DA</item>
+        <item name="android:colorBackground">#E8EAF6</item>
+    </style>
+
+    <style name="DayTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">#B3E5FC</item>
+        <item name="colorPrimaryDark">#81D4FA</item>
+        <item name="colorAccent">#039BE5</item>
+        <item name="android:textColorPrimary">#01579B</item>
+        <item name="android:navigationBarColor">#81D4FA</item>
+        <item name="android:colorBackground">#E1F5FE</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+</resources>
