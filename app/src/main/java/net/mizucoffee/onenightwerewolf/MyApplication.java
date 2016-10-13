@@ -1,4 +1,4 @@
-package com.kawakawaplanning.onenightwerewolf;
+package net.mizucoffee.onenightwerewolf;
 
 import android.app.Application;
 import android.graphics.Typeface;

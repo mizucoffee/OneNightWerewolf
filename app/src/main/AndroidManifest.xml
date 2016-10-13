@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.kawakawaplanning.onenightwerewolf">
+    package="net.mizucoffee.onenightwerewolf">
 
     <uses-permission android:name="android.permission.INTERNET" />
 

@@ -1,4 +1,4 @@
-package com.kawakawaplanning.onenightwerewolf;
+package net.mizucoffee.onenightwerewolf;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -20,7 +20,6 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.crashlytics.android.Crashlytics;
-import com.kawakawaplanning.onenightwerewolf.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

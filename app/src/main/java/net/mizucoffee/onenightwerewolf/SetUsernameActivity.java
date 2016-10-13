@@ -1,4 +1,4 @@
-package com.kawakawaplanning.onenightwerewolf;
+package net.mizucoffee.onenightwerewolf;
 
 import android.content.Intent;
 import android.os.Bundle;

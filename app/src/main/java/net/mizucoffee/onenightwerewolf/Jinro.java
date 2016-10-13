@@ -1,4 +1,4 @@
-package com.kawakawaplanning.onenightwerewolf;
+package net.mizucoffee.onenightwerewolf;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
