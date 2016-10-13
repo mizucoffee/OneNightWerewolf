@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +30,8 @@ public class CardServeActivity extends AppCompatActivity {
     TextView cpTv;
 
     int count = 0;
+
+    boolean flag = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,20 +69,27 @@ public class CardServeActivity extends AppCompatActivity {
     @OnClick(R.id.nextBtn)
     public void next() {
 
-        new AlertDialog.Builder(this)
-                .setTitle("確認")
-                .setMessage("本当に" + app.jinro.playerNames.get(count) + "さんですか？")
-                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent();
-                        intent.setClass(CardServeActivity.this, CardActivity.class);
-                        intent.putExtra("card",count);
-                        startActivityForResult(intent, count);
-                    }
-                })
-                .setNegativeButton("No", null)
-                .show();
+        if(flag){
+            Intent intent = new Intent();
+            intent.setClass(this, CountActivity.class);
+            startActivity(intent);
+            finish();
+        }else {
+            new AlertDialog.Builder(this)
+                    .setTitle("確認")
+                    .setMessage("本当に" + app.jinro.playerNames.get(count) + "さんですか？")
+                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            Intent intent = new Intent();
+                            intent.setClass(CardServeActivity.this, CardActivity.class);
+                            intent.putExtra("card", count);
+                            startActivityForResult(intent, count);
+                        }
+                    })
+                    .setNegativeButton("No", null)
+                    .show();
+        }
     }
 
     @Override
@@ -88,7 +99,13 @@ public class CardServeActivity extends AppCompatActivity {
             if (count < playersNum){
                 cpTv.setText(app.jinro.playerNames.get(count));
             }else{
-                cpTv.setText("全員終了");
+                flag = true;
+                findViewById(R.id.sa).setVisibility(View.INVISIBLE);
+                findViewById(R.id.sb).setVisibility(View.INVISIBLE);
+
+                ((Button)findViewById(R.id.nextBtn)).setText("NEXT");
+
+                cpTv.setText("話し合い開始");
             }
         }
     }

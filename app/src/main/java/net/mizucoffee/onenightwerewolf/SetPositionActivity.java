@@ -143,6 +143,13 @@ public class SetPositionActivity extends AppCompatActivity {
     @OnClick(R.id.nextBtn)
     public void next(){
 
+        app.werewolf = werewolf;
+        app.seer = seer;
+        app.robber = robber;
+        app.minion = minion;
+        app.tanner = tanner;
+        app.villager = villager;
+
         for(int i = 0;i <= 5; i++){
             switch (i){
                 case 0:

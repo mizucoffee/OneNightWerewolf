@@ -17,6 +17,14 @@ public class MyApplication extends Application {
     public Jinro jinro;
     private Typeface mMplusLight;
 
+    public int werewolf;
+    public int seer;
+    public int robber;
+    public int minion;
+    public int tanner;
+    public int villager;
+
+
     public static String APPLICATION_ID = "A6B7B220";
 
     @Override

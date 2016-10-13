@@ -3,7 +3,6 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.kawakawaplanning.onenightwerewolf.MainActivity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -36,7 +35,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="あなたは"
-            android:id="@+id/textView3"
+            android:id="@+id/sa"
             android:layout_gravity="center_horizontal" />
 
         <Space
@@ -64,7 +63,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="さんですか？"
-            android:id="@+id/textView4"
+            android:id="@+id/sb"
             android:layout_gravity="center_horizontal" />
 
         <Space

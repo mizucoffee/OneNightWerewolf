@@ -6,7 +6,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
-
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -41,7 +40,16 @@
         <activity
             android:name=".CardActivity"
             android:theme="@style/NightTheme" />
-
+        <activity android:name=".CountActivity"
+            android:theme="@style/MorningTheme"/>
+        <activity android:name=".PollActivity"
+            android:theme="@style/DayTheme"/>
+        <activity android:name=".PollServeActivity"
+            android:theme="@style/DayTheme"/>
+        <activity android:name=".KillActivity"
+            android:theme="@style/EveningTheme"/>
+        <activity android:name=".ResultActivity"
+            android:theme="@style/EveningTheme"/>
     </application>
 
 </manifest>

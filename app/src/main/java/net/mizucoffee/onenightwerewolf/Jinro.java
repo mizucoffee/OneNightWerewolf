@@ -25,6 +25,8 @@ public class Jinro {
 
     ArrayList<String> playerNames; //プレイヤー名前
     ArrayList<Integer> cards; //ランダムにするカード
+    ArrayList<Integer> poll;
+    ArrayList<Integer> killed;
 
     public boolean isSwap = false;
     public int swapPlayer;
@@ -32,6 +34,8 @@ public class Jinro {
     public Jinro(){
         playerNames = new ArrayList<>();
         cards       = new ArrayList<>();
+        poll        = new ArrayList<>();
+        killed      = new ArrayList<>();
     }
 
     public int getPlayersNum() {
