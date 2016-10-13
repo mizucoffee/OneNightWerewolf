@@ -7,16 +7,11 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.NumberPicker;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
-
-import java.lang.reflect.Field;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -24,6 +19,8 @@ import butterknife.OnClick;
 import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static final String TAG = MainActivity.class.getSimpleName();
 
     @BindView(R.id.toolbar)
     Toolbar mToolBar;
@@ -38,7 +35,6 @@ public class MainActivity extends AppCompatActivity {
     Button mSettingBtn;
 
     MyApplication app;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -56,12 +52,12 @@ public class MainActivity extends AppCompatActivity {
         mMplusLight = Typeface.createFromAsset(getAssets(), "mplus-1c-light.ttf");
         mMplusThin = Typeface.createFromAsset(getAssets(), "mplus-1c-thin.ttf");
 
-
         mSettingBtn.setTypeface(mMplusLight);
         mStartBtn.setTypeface(mMplusLight);
         mWhatBtn.setTypeface(mMplusLight);
 
     }
+
 
     @OnClick(R.id.startBtn)
     public void startBtn(){
@@ -91,4 +87,5 @@ public class MainActivity extends AppCompatActivity {
                 .setView(ll)
                 .show();
     }
+
 }

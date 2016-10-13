@@ -17,6 +17,8 @@ public class MyApplication extends Application {
     public Jinro jinro;
     private Typeface mMplusLight;
 
+    public static String APPLICATION_ID = "A6B7B220";
+
     @Override
     public void onCreate() {
         super.onCreate();

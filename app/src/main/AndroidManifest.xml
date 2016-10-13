@@ -3,6 +3,9 @@
     package="net.mizucoffee.onenightwerewolf">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
 
     <application
         android:name=".MyApplication"
@@ -34,10 +37,11 @@
 
         <activity
             android:name=".CardServeActivity"
-            android:theme="@style/NightTheme"></activity>
+            android:theme="@style/NightTheme" />
         <activity
             android:name=".CardActivity"
-            android:theme="@style/NightTheme"></activity>
+            android:theme="@style/NightTheme" />
+
     </application>
 
 </manifest>
