@@ -15,6 +15,12 @@ import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
 
+import net.mizucoffee.onenightwerewolf.http.Http;
+import net.mizucoffee.onenightwerewolf.http.OnHttpResponseListener;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -43,7 +49,7 @@ public class PollServeActivity extends AppCompatActivity {
 
         playersNum = app.jinro.getPlayersNum();
 
-
+        if(app.id != null) setTitle( getTitle() + " ID:" + app.id );
         setContentView(R.layout.activity_check_name);
         ButterKnife.bind(this);
         setSupportActionBar(mToolBar);
@@ -70,6 +76,27 @@ public class PollServeActivity extends AppCompatActivity {
     public void next() {
 
         if(flag){
+            if (app.id != null) {
+                String poll = "";
+                for(int i:app.jinro.poll) poll = poll + i + ";";
+                if(!poll.equals(""))      poll = poll.substring(0,poll.length()-1);
+
+                Http http = new Http();
+                http.setOnHttpResponseListener(new OnHttpResponseListener() {
+                    @Override
+                    public void onResponse(String response) {
+                        Intent intent = new Intent();
+                        intent.setClass(PollServeActivity.this, KillActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                });
+                try {
+                    http.get("http://nuku.mizucoffee.net:1234/p5?id=" + app.id + "&poll="+URLEncoder.encode(poll,"UTF-8"));
+                } catch (UnsupportedEncodingException e) {
+                    e.printStackTrace();
+                }
+            }
             Intent intent = new Intent();
             intent.setClass(this, KillActivity.class);
             startActivity(intent);

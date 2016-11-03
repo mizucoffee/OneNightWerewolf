@@ -3,6 +3,7 @@ package net.mizucoffee.onenightwerewolf;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.os.Handler;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,14 +14,15 @@ import android.widget.NumberPicker;
 
 import com.crashlytics.android.Crashlytics;
 
+import net.mizucoffee.onenightwerewolf.http.Http;
+import net.mizucoffee.onenightwerewolf.http.OnHttpResponseListener;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.fabric.sdk.android.Fabric;
 
 public class MainActivity extends AppCompatActivity {
-
-    private static final String TAG = MainActivity.class.getSimpleName();
 
     @BindView(R.id.toolbar)
     Toolbar mToolBar;
@@ -58,34 +60,55 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
+    Handler handler;
     @OnClick(R.id.startBtn)
     public void startBtn(){
-        LinearLayout ll = new LinearLayout(this);
-        ll.setOrientation(LinearLayout.VERTICAL);
+        handler = new Handler();
 
-        final NumberPicker np = new NumberPicker(this);
-        np.setMinValue(3);
-        np.setMaxValue(6);
-        ll.addView(np);
+        Http http = new Http();
+        http.setOnHttpResponseListener(new OnHttpResponseListener() {
+            @Override
+            public void onResponse(String response) {
+                if(response.length() == 5){
+                    app.id = response;
+                }
 
-        new AlertDialog.Builder(this)
-                .setTitle("Set the number of participants")
-                .setCancelable(true)
-                .setPositiveButton("NEXT", new DialogInterface.OnClickListener() {
+                handler.post(new Runnable() {
                     @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        app.resetJinro();
-                        app.jinro.setPlayersNum(np.getValue());
+                    public void run() {
+                        LinearLayout ll = new LinearLayout(MainActivity.this);
+                        ll.setOrientation(LinearLayout.VERTICAL);
 
-                        Intent intent = new Intent();
-                        intent.setClass(MainActivity.this,SetPositionActivity.class);
-                        startActivity(intent);
+                        final NumberPicker np = new NumberPicker(MainActivity.this);
+                        np.setMinValue(3);
+                        np.setMaxValue(6);
+                        ll.addView(np);
+
+                        new AlertDialog.Builder(MainActivity.this)
+                                .setTitle("Set the number of participants")
+                                .setCancelable(true)
+                                .setPositiveButton("NEXT", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        app.resetJinro();
+                                        app.jinro.setPlayersNum(np.getValue());
+//                        for(int i = 0;i<np.getValue();i++)
+
+                                        Intent intent = new Intent();
+                                        intent.setClass(MainActivity.this,SetPositionActivity.class);
+                                        startActivity(intent);
+                                    }
+                                })
+                                .setNegativeButton("CANSEL", null)
+                                .setView(ll)
+                                .show();
                     }
-                })
-                .setNegativeButton("CANSEL", null)
-                .setView(ll)
-                .show();
+                });
+            }
+        });
+        http.get("http://nuku.mizucoffee.net:1234/p1");
+
+
     }
 
 }

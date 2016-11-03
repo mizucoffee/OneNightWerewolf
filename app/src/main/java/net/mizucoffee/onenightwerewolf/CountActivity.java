@@ -13,6 +13,9 @@ import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
 
+import net.mizucoffee.onenightwerewolf.http.Http;
+import net.mizucoffee.onenightwerewolf.http.OnHttpResponseListener;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -42,6 +45,7 @@ public class CountActivity extends AppCompatActivity {
         app = (MyApplication)getApplicationContext();
         ButterKnife.bind(this);
         Fabric.with(this, new Crashlytics());
+        if(app.id != null) setTitle( getTitle() + " ID:" + app.id );
 
         setSupportActionBar(mToolBar);
         app.setTitlebarFont(mToolBar);
@@ -49,7 +53,7 @@ public class CountActivity extends AppCompatActivity {
         werewolf.setText("人狼:" + app.werewolf);
         seer.setText("占師:" + app.seer);
         robber.setText("怪盗:" + app.robber);
-        minion.setText("怪盗:" + app.minion);
+        minion.setText("狂人:" + app.minion);
         tanner.setText("吊人:" + app.tanner);
         villager.setText("村人:" + app.villager);
 
@@ -84,10 +88,20 @@ public class CountActivity extends AppCompatActivity {
     @OnClick(R.id.nextBtn)
     public void next() {
         cdt.cancel();
-        Intent intent = new Intent();
-        intent.setClass(this, PollServeActivity.class);
-        startActivity(intent);
-        finish();
+
+        if (app.id != null) {
+            Http http = new Http();
+            http.setOnHttpResponseListener(new OnHttpResponseListener() {
+                @Override
+                public void onResponse(String response) {
+                    Intent intent = new Intent();
+                    intent.setClass(CountActivity.this,PollServeActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            });
+            http.get("http://nuku.mizucoffee.net:1234/p4?id=" + app.id);
+        }
     }
 
     private CountDownTimer keyEventTimer;
@@ -108,3 +122,5 @@ public class CountActivity extends AppCompatActivity {
         return super.dispatchKeyEvent(event);
     }
 }
+
+

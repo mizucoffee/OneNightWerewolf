@@ -43,15 +43,22 @@ public class CardActivity extends AppCompatActivity {
 
         app = (MyApplication)getApplicationContext();
         Fabric.with(this, new Crashlytics());
+        if(app.id != null) setTitle( getTitle() + " ID:" + app.id );
 
         player = getIntent().getIntExtra("card",0);
 
         System.out.println(app.jinro.cards.get(player));
         switch (app.jinro.cards.get(player)){
-//        switch (1){
             case 0:
                 setContentView(R.layout.activity_card_jinro);
                 card = Jinro.WEREWOLF;
+                if(app.werewolf == 2){
+                    TextView tv = (TextView)findViewById(R.id.textView5);
+                    for (int i = 0; i != app.jinro.getPlayersNum(); i++) {
+                        if(i == player) continue;
+                        if(app.jinro.cards.get(i) == Jinro.WEREWOLF) {tv.setText(app.jinro.playerNames.get(i)+"さんも人狼です"); break;}
+                    }
+                }
                 nextBtn = (Button)findViewById(R.id.nextBtn);
                 nextBtn.setOnClickListener(next);
                 break;
@@ -162,6 +169,7 @@ public class CardActivity extends AppCompatActivity {
         public void onClick(View view) {
             System.out.println(((Button)view).getText());
             if(((Button)view).getText().equals("場のカードを見る")){
+                app.jinro.seer.add(10);
                 new AlertDialog.Builder(CardActivity.this)
                         .setTitle("占い結果")
                         .setMessage("場のカードは" + Jinro.getCardName(app.jinro.cards.get(app.jinro.getPlayersNum())) + "と" + Jinro.getCardName(app.jinro.cards.get(app.jinro.getPlayersNum()+1)) + "でした。")
@@ -172,6 +180,7 @@ public class CardActivity extends AppCompatActivity {
                                 finish();
                             }
                         })
+                        .setCancelable(false)
                         .show();
             }else{
                 int i = 0;
@@ -181,6 +190,7 @@ public class CardActivity extends AppCompatActivity {
                     }
                     i++;
                 }
+                app.jinro.seer.add(i);
                 new AlertDialog.Builder(CardActivity.this)
                         .setTitle("占い結果")
                         .setMessage((((Button)view).getText())+"さんは" + Jinro.getCardName(app.jinro.cards.get(i)) + "でした。")
@@ -191,6 +201,7 @@ public class CardActivity extends AppCompatActivity {
                                 finish();
                             }
                         })
+                        .setCancelable(false)
                         .show();
             }
         }
@@ -220,6 +231,7 @@ public class CardActivity extends AppCompatActivity {
                             finish();
                         }
                     })
+                    .setCancelable(false)
                     .show();
         }
     };

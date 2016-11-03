@@ -36,6 +36,7 @@ public class PollActivity extends AppCompatActivity {
         LinearLayout lll = (LinearLayout)findViewById(R.id.ll);
         player = getIntent().getIntExtra("card",0);
         btn = new Button[app.jinro.getPlayersNum()];
+        if(app.id != null) setTitle( getTitle() + " ID:" + app.id );
 
         for (int i = 0; i != app.jinro.getPlayersNum(); i++) {
             if(i == player) continue;

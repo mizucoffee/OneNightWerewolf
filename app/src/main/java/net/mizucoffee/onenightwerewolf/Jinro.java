@@ -27,6 +27,8 @@ public class Jinro {
     ArrayList<Integer> cards; //ランダムにするカード
     ArrayList<Integer> poll;
     ArrayList<Integer> killed;
+    ArrayList<Integer> seer;
+    int[] point;
 
     public boolean isSwap = false;
     public int swapPlayer;
@@ -36,6 +38,13 @@ public class Jinro {
         cards       = new ArrayList<>();
         poll        = new ArrayList<>();
         killed      = new ArrayList<>();
+        seer        = new ArrayList<>();
+    }
+
+    public void retry(){
+        poll        = new ArrayList<>();
+        killed      = new ArrayList<>();
+        seer      = new ArrayList<>();
     }
 
     public int getPlayersNum() {
@@ -44,6 +53,9 @@ public class Jinro {
 
     public void setPlayersNum(int playersNum) {
         this.playersNum = playersNum;
+        point       = new int[playersNum];
+        for(int i = 0;i!=playersNum;i++)
+            point[i] = 0;
     }
 
     public void shuffle(){

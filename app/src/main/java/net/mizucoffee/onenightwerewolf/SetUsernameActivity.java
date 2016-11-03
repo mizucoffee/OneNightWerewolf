@@ -16,6 +16,11 @@ import android.widget.TextView;
 
 import com.crashlytics.android.Crashlytics;
 
+import net.mizucoffee.onenightwerewolf.http.Http;
+import net.mizucoffee.onenightwerewolf.http.OnHttpResponseListener;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -47,7 +52,7 @@ public class SetUsernameActivity extends AppCompatActivity{
         app = (MyApplication)getApplicationContext();
         ButterKnife.bind(this);
         Fabric.with(this, new Crashlytics());
-
+        if(app.id != null) setTitle( getTitle() + " ID:" + app.id );
         setSupportActionBar(mToolBar);
         app.setTitlebarFont(mToolBar);
         //全てのアクティビティですべき処理 ↑
@@ -84,7 +89,7 @@ public class SetUsernameActivity extends AppCompatActivity{
 
         boolean flag = true;
         for(String s: l){
-            if (s.indexOf("場の") != -1)
+            if (s.indexOf("場の") != -1 || s.indexOf(";") != -1)
                 flag = false;
         }
 
@@ -98,10 +103,35 @@ public class SetUsernameActivity extends AppCompatActivity{
                     }
                 }
 
-                Intent intent = new Intent();
-                intent.setClass(this, CardServeActivity.class);
-                startActivity(intent);
-                finish();
+                String player = "";
+                for(String s:app.jinro.playerNames){
+                    player = player + s + ";";
+                }
+                player = player.substring(0,player.length()-1);
+
+                String card = "";
+                for(int i:app.jinro.cards){
+                    card = card + i + ";";
+                }
+                card = card.substring(0,card.length()-1);
+
+                if (app.id != null) {
+                    Http http = new Http();
+                    http.setOnHttpResponseListener(new OnHttpResponseListener() {
+                        @Override
+                        public void onResponse(String response) {
+                            Intent intent = new Intent();
+                            intent.setClass(SetUsernameActivity.this, CardServeActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    });
+                    try {
+                        http.get("http://nuku.mizucoffee.net:1234/p2?id=" + app.id + "&player="+URLEncoder.encode(player,"UTF-8")+"&card="+URLEncoder.encode(card,"UTF-8"));
+                    } catch (UnsupportedEncodingException e) {
+                        e.printStackTrace();
+                    }
+                }
             }else{
                 Snackbar snackbar = Snackbar.make(root, "使用できない文字列が含まれています。変更してください。", Snackbar.LENGTH_SHORT);
                 snackbar.show();

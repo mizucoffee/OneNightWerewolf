@@ -51,7 +51,7 @@ public class SetPositionActivity extends AppCompatActivity {
         app = (MyApplication)getApplicationContext();
         ButterKnife.bind(this);
         Fabric.with(this, new Crashlytics());
-
+        if(app.id != null) setTitle( getTitle() + " ID:" + app.id );
         setSupportActionBar(mToolBar);
         app.setTitlebarFont(mToolBar);
         //全てのアクティビティですべき処理 ↑
@@ -143,7 +143,7 @@ public class SetPositionActivity extends AppCompatActivity {
     @OnClick(R.id.nextBtn)
     public void next(){
 
-        app.werewolf = werewolf;
+        app.werewolf = werewolf+1;
         app.seer = seer;
         app.robber = robber;
         app.minion = minion;

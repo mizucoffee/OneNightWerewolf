@@ -39,7 +39,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/scrollView2" >
+        android:id="@+id/scrollView2"
+        android:layout_weight="1">
 
         <LinearLayout
             android:orientation="vertical"
@@ -95,7 +96,50 @@
                 android:paddingTop="@dimen/activity_vertical_margin"
                 android:id="@+id/ll3">
             </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="最終役職"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:layout_gravity="center_horizontal" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:id="@+id/ll4">
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="ポイント"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:layout_gravity="center_horizontal" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:id="@+id/ll5">
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="RETRY"
+        android:id="@+id/nextBtn"
+        android:background="@drawable/next_btn_back"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:textSize="16dp" />
+
 
 </LinearLayout>

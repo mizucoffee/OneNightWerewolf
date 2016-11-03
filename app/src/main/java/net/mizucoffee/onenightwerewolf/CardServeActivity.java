@@ -15,6 +15,12 @@ import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
 
+import net.mizucoffee.onenightwerewolf.http.Http;
+import net.mizucoffee.onenightwerewolf.http.OnHttpResponseListener;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -39,7 +45,7 @@ public class CardServeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         app = (MyApplication)getApplicationContext();
         Fabric.with(this, new Crashlytics());
-
+        if(app.id != null) setTitle( getTitle() + " ID:" + app.id );
 
         playersNum = app.jinro.getPlayersNum();
 
@@ -70,10 +76,32 @@ public class CardServeActivity extends AppCompatActivity {
     public void next() {
 
         if(flag){
-            Intent intent = new Intent();
-            intent.setClass(this, CountActivity.class);
-            startActivity(intent);
-            finish();
+
+            String seer = "";
+            for(int i:app.jinro.seer) seer = seer + i + ";";
+            if(!seer.equals(""))      seer = seer.substring(0,seer.length()-1);
+
+            String swap = "";
+            for(int i = 0; i != playersNum;i++)
+                if (app.jinro.cards.get(i) == Jinro.ROBBER) {
+                    swap = app.jinro.swapPlayer + "";
+                    break;
+                }
+
+            if (app.id != null) {
+                Http http = new Http();
+                http.setOnHttpResponseListener(new OnHttpResponseListener() {
+                    @Override
+                    public void onResponse(String response) {
+                        Intent intent = new Intent();
+                        intent.setClass(CardServeActivity.this, CountActivity.class);
+                        startActivity(intent);
+                        finish();
+                    }
+                });
+                http.get("http://nuku.mizucoffee.net:1234/p3?id=" + app.id + "&seer="+seer+"&swap="+swap);
+            }
+
         }else {
             new AlertDialog.Builder(this)
                     .setTitle("確認")
