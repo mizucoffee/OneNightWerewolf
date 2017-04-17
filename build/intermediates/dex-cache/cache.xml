@@ -1,2 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\Mizucofee\Documents\GitHub\OneNightWerewolf\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="C:\Users\Mizucofee\Documents\GitHub\OneNightWerewolf\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_4cfdfe4d4354e73d81f6f0785023cfb8c04ae8f8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Mizucofee\Documents\GitHub\OneNightWerewolf\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a3f7649f3618e6913434c1f00d9aa31c20bc6ef8">
+        <dex dex="C:\Users\Mizucofee\Documents\GitHub\OneNightWerewolf\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_8014db178268d2bcf837dda6dde11ee7f408a79e\classes.dex" />
+    </item>
+
+</items>

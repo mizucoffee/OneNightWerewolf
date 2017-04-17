@@ -7,14 +7,14 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
-        android:name=".MyApplication"
+        android:name=".old.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:screenOrientation="portrait"
         android:supportsRtl="true">
         <activity
-            android:name=".MainActivity"
+            android:name=".old.MainActivity"
             android:screenOrientation="portrait"
             android:theme="@style/MorningTheme">
             <intent-filter>
@@ -24,10 +24,10 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SetPositionActivity"
+            android:name=".old.SetPositionActivity"
             android:theme="@style/DayTheme" />
         <activity
-            android:name=".SetUsernameActivity"
+            android:name=".old.SetUsernameActivity"
             android:theme="@style/EveningTheme" />
 
         <meta-data
@@ -35,21 +35,38 @@
             android:value="81d3359502772e5911bd72319039578847ffbbcd" />
 
         <activity
-            android:name=".CardServeActivity"
+            android:name=".old.CardServeActivity"
             android:theme="@style/NightTheme" />
         <activity
-            android:name=".CardActivity"
+            android:name=".old.CardActivity"
             android:theme="@style/NightTheme" />
-        <activity android:name=".CountActivity"
-            android:theme="@style/MorningTheme"/>
-        <activity android:name=".PollActivity"
-            android:theme="@style/DayTheme"/>
-        <activity android:name=".PollServeActivity"
-            android:theme="@style/DayTheme"/>
-        <activity android:name=".KillActivity"
-            android:theme="@style/EveningTheme"/>
-        <activity android:name=".ResultActivity"
-            android:theme="@style/EveningTheme"/>
+        <activity
+            android:name=".old.CountActivity"
+            android:theme="@style/MorningTheme" />
+        <activity
+            android:name=".old.PollActivity"
+            android:theme="@style/DayTheme" />
+        <activity
+            android:name=".old.PollServeActivity"
+            android:theme="@style/DayTheme" />
+        <activity
+            android:name=".old.KillActivity"
+            android:theme="@style/EveningTheme" />
+        <activity
+            android:name=".old.ResultActivity"
+            android:theme="@style/EveningTheme" />
+        <activity
+            android:name=".welcome.WelcomeActivity"
+            android:theme="@style/MorningTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".jinro.JinroActivity"
+            android:theme="@style/EveningTheme" />
     </application>
 
 </manifest>

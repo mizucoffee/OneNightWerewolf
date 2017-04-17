@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="fontloader-0.3.0">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/net.kianoni/fontloader/0.3.0/res" />
-      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/net.kianoni/fontloader/0.3.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/7e4c7ed8db5ab70e0e3284dde1e2908858fcf70c/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/7e4c7ed8db5ab70e0e3284dde1e2908858fcf70c/output/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

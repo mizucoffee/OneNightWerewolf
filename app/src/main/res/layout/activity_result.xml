@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="@drawable/background"
     android:baselineAligned="false"
-    android:background="@drawable/background">
+    android:orientation="vertical">
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
@@ -20,125 +18,124 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_gravity="center_horizontal"
         android:paddingTop="@dimen/activity_vertical_margin"
         android:text="結果発表"
-        android:layout_gravity="center_horizontal"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="32dp" />
 
     <TextView
+        android:id="@+id/resultTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="人狼陣営勝利"
-        android:paddingTop="@dimen/activity_vertical_margin"
-        android:id="@+id/resultTv"
         android:layout_gravity="center_horizontal"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:text="人狼陣営勝利"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="48dp" />
 
     <ScrollView
+        android:id="@+id/scrollView2"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/scrollView2"
         android:layout_weight="1">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="投票先"
                 android:id="@+id/textView4"
-                android:paddingTop="@dimen/activity_vertical_margin"
-                android:layout_gravity="center_horizontal" />
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:paddingTop="@dimen/activity_vertical_margin"
-                android:id="@+id/ll">
-            </LinearLayout>
+                android:text="投票先"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <LinearLayout
+                android:id="@+id/ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/activity_vertical_margin"></LinearLayout>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_gravity="center_horizontal"
+                android:paddingTop="@dimen/activity_vertical_margin"
                 android:text="初期役職"
-                android:paddingTop="@dimen/activity_vertical_margin"
-                android:layout_gravity="center_horizontal" />
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <LinearLayout
-                android:orientation="vertical"
+                android:id="@+id/ll2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:paddingTop="@dimen/activity_vertical_margin"
-                android:id="@+id/ll2">
-            </LinearLayout>
+                android:orientation="vertical"
+                android:paddingTop="@dimen/activity_vertical_margin"></LinearLayout>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_gravity="center_horizontal"
+                android:paddingTop="@dimen/activity_vertical_margin"
                 android:text="能力"
-                android:paddingTop="@dimen/activity_vertical_margin"
-                android:layout_gravity="center_horizontal" />
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <LinearLayout
-                android:orientation="vertical"
+                android:id="@+id/ll3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:paddingTop="@dimen/activity_vertical_margin"
-                android:id="@+id/ll3">
-            </LinearLayout>
+                android:orientation="vertical"
+                android:paddingTop="@dimen/activity_vertical_margin"></LinearLayout>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_gravity="center_horizontal"
+                android:paddingTop="@dimen/activity_vertical_margin"
                 android:text="最終役職"
-                android:paddingTop="@dimen/activity_vertical_margin"
-                android:layout_gravity="center_horizontal" />
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <LinearLayout
-                android:orientation="vertical"
+                android:id="@+id/ll4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:paddingTop="@dimen/activity_vertical_margin"
-                android:id="@+id/ll4">
-            </LinearLayout>
+                android:orientation="vertical"
+                android:paddingTop="@dimen/activity_vertical_margin"></LinearLayout>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="ポイント"
+                android:layout_gravity="center_horizontal"
                 android:paddingTop="@dimen/activity_vertical_margin"
-                android:layout_gravity="center_horizontal" />
+                android:text="ポイント"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
 
             <LinearLayout
-                android:orientation="vertical"
+                android:id="@+id/ll5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:paddingTop="@dimen/activity_vertical_margin"
-                android:id="@+id/ll5">
-            </LinearLayout>
+                android:orientation="vertical"
+                android:paddingTop="@dimen/activity_vertical_margin"></LinearLayout>
         </LinearLayout>
     </ScrollView>
 
     <Button
+        android:id="@+id/nextBtn"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:text="RETRY"
-        android:id="@+id/nextBtn"
         android:background="@drawable/next_btn_back"
-        android:textColor="#ffffff"
         android:gravity="center"
+        android:text="RETRY"
+        android:textColor="#ffffff"
         android:textSize="16dp" />
 
 
