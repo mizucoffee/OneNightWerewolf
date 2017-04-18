@@ -108,6 +108,7 @@
             android:layout_height="48dp"
             android:background="@drawable/next_btn_back"
             android:gravity="center"
+            android:onClick="@{count::next}"
             android:text="投票"
             android:textColor="#ffffff"
             android:textSize="16dp" />

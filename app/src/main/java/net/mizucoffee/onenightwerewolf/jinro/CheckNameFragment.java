@@ -90,88 +90,32 @@ public class CheckNameFragment extends Fragment {
 
     public void next(View v) {
         if(activity.room.getPlayerCount() < activity.room.getPlayerNum())
-            new AlertDialog.Builder(getContext())
-                    .setTitle("確認")
+            new AlertDialog.Builder(activity)
+                .setTitle("確認")
                     .setMessage("本当に" + activity.room.getPlayers().get(activity.room.getPlayerCount()) + "さんですか？")
                     .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-
-                            FragmentTransaction transaction = getFragmentManager().beginTransaction();
-                            transaction.replace(R.id.fragment,new CardFragment());
-                            transaction.commit();
+                            if(activity.room.getPhase() == 2){
+                                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                                transaction.replace(R.id.fragment,new CardFragment());
+                                transaction.commit();
+                            } else {
+                                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                                transaction.replace(R.id.fragment,new PollFragment());
+                                transaction.commit();
+                            }
                         }
                     })
                     .setNegativeButton("No", null)
                     .show();
         else{
+            activity.room.setPhase(3);
+            activity.room.setPlayerCount(0);
+            activity.send();
             FragmentTransaction transaction = getFragmentManager().beginTransaction();
             transaction.replace(R.id.fragment,new CountFragment());
             transaction.commit();
         }
-
-
-
-//        if(flag){
-//
-//            String seer = "";
-//            for(int i:app.jinro.seer) seer = seer + i + ";";
-//            if(!seer.equals(""))      seer = seer.substring(0,seer.length()-1);
-//
-//            String swap = "";
-//            for(int i = 0; i != playersNum;i++)
-//                if (app.jinro.cards.get(i) == Jinro.ROBBER) {
-//                    swap = app.jinro.swapPlayer + "";
-//                    break;
-//                }
-//
-//            if (app.id != null) {
-//                Http http = new Http();
-//                http.setOnHttpResponseListener(new OnHttpResponseListener() {
-//                    @Override
-//                    public void onResponse(String response) {
-//                        Intent intent = new Intent();
-//                        intent.setClass(CheckNameFragment.this, CountActivity.class);
-//                        startActivity(intent);
-//                        finish();
-//                    }
-//                });
-//                http.get("http://nuku.mizucoffee.net:1234/p3?id=" + app.id + "&seer="+seer+"&swap="+swap);
-//            }
-//
-//        }else {
-//            new AlertDialog.Builder(this)
-//                    .setTitle("確認")
-//                    .setMessage("本当に" + app.jinro.playerNames.get(count) + "さんですか？")
-//                    .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-//                        @Override
-//                        public void onClick(DialogInterface dialog, int which) {
-//                            Intent intent = new Intent();
-//                            intent.setClass(CheckNameFragment.this, CardActivity.class);
-//                            intent.putExtra("card", count);
-//                            startActivityForResult(intent, count);
-//                        }
-//                    })
-//                    .setNegativeButton("No", null)
-//                    .show();
-//        }
     }
-
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, Intent data){
-//        if (requestCode == count && resultCode == 1){
-//            count++;
-//            if (count < playersNum){
-//                cpTv.setText(app.jinro.playerNames.get(count));
-//            }else{
-//                flag = true;
-//                findViewById(R.id.sa).setVisibility(View.INVISIBLE);
-//                findViewById(R.id.sb).setVisibility(View.INVISIBLE);
-//
-//                ((Button)findViewById(R.id.nextBtn)).setText("NEXT");
-//
-//                cpTv.setText("話し合い開始");
-//            }
-//        }
-//    }
 }

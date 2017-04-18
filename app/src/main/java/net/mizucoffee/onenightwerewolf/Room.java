@@ -15,6 +15,16 @@ public class Room {
     private ArrayList<Integer> swap;   // 可変 スワップ先プレイヤーID
     private ArrayList<Integer> seer;   // 可変 占い先プレイヤーID
     private ArrayList<Integer> poll;   // 可変 投票先プレイヤーID
+
+    public ArrayList<Integer> getKill() {
+        return kill;
+    }
+
+    public void setKill(ArrayList<Integer> kill) {
+        this.kill = kill;
+    }
+
+    private ArrayList<Integer> kill;   // 可変 死亡プレイヤーID
     private ArrayList<Integer> point;  // 可変 プレイヤーのポイント
     private int playerNum;             // 不変 プレイヤー人数
     private int playerCount;           // 可変 クラスチェック時及び投票時のプレイヤーID

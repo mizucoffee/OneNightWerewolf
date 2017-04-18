@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,8 +20,6 @@ import net.mizucoffee.onenightwerewolf.R;
 import net.mizucoffee.onenightwerewolf.databinding.ActivityCountBinding;
 
 import java.lang.reflect.Field;
-
-import butterknife.OnClick;
 
 public class CountFragment extends Fragment {
 
@@ -98,23 +97,14 @@ public class CountFragment extends Fragment {
 
     }
 
-    @OnClick(R.id.nextBtn)
-    public void next() {
+    public void next(View v) {
         cdt.cancel();
 
-//        if (app.id != null) {
-//            Http http = new Http();
-//            http.setOnHttpResponseListener(new OnHttpResponseListener() {
-//                @Override
-//                public void onResponse(String response) {
-//                    Intent intent = new Intent();
-//                    intent.setClass(CountFragment.this,PollServeActivity.class);
-//                    startActivity(intent);
-//                    finish();
-//                }
-//            });
-//            http.get("http://nuku.mizucoffee.net:1234/p4?id=" + app.id);
-//        }
+        activity.room.setPhase(4);
+
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.fragment,new CheckNameFragment());
+        transaction.commit();
     }
 
 }

@@ -93,8 +93,8 @@ public class SetPositionFragment extends Fragment {
             case 3:
                 werewolf.set(0);
                 seer.set(1);
-                robber.set(1);
-                minion.set(0);
+                robber.set(0);
+                minion.set(1);
                 tanner.set(0);
                 break;
             case 4:
@@ -119,6 +119,19 @@ public class SetPositionFragment extends Fragment {
                 tanner.set(1);
                 break;
         }
+        activity.room.setWerewolf(werewolf.get() + 1);
+        activity.room.setSeerc(seer.get());
+        activity.room.setRobber(robber.get());
+        activity.room.setMinion(minion.get());
+        activity.room.setTanner(tanner.get());
+        activity.room.setVillager(playerNum.get() -
+                (werewolf.get() +
+                        seer.get() +
+                        robber.get() +
+                        minion.get() +
+                        tanner.get() + 1) + 2);
+
+        activity.send();
     }
 
     public SeekBarBindingAdapter.OnProgressChanged progressChanged = new SeekBarBindingAdapter.OnProgressChanged() {
@@ -207,6 +220,7 @@ public class SetPositionFragment extends Fragment {
                         mBinding.tannerSb.getProgress() + 1) + 2);
 
         activity.room.setCards(cards);
+        activity.room.setPhase(1);
 
         final DatabaseReference ref = FirebaseDatabase.getInstance().getReference("room");
         ref.addListenerForSingleValueEvent(new ValueEventListener() {

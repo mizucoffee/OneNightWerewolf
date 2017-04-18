@@ -29,8 +29,6 @@ public class WelcomeActivity extends AppCompatActivity {
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.add(R.id.fragment,new WelcomeFragment());
         transaction.commit();
-
-        setTitle( getTitle() + " ID:" + room.getRoomId() );
     }
 
     public void send(){

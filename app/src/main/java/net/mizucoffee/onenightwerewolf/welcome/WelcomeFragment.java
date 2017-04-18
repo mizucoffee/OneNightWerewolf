@@ -87,69 +87,72 @@ public class WelcomeFragment extends Fragment {
 
     private String newId;
     public void start(View v){
-        final ProgressDialog progressDialog = new ProgressDialog(getContext());
-        progressDialog.setTitle("準備中");
-        progressDialog.setMessage("しばらくお待ち下さい...");
-        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
-        progressDialog.setCancelable(false);
-        progressDialog.show();
+        LinearLayout ll = new LinearLayout(getContext());
+        ll.setOrientation(LinearLayout.VERTICAL);
 
-        final DatabaseReference ref = mDatabase.getReference("room");
-        ref.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                GenericTypeIndicator<ArrayList<Room>> genericTypeIndicator = new GenericTypeIndicator<ArrayList<Room>>() {};
-                ArrayList<Room> list = dataSnapshot.getValue(genericTypeIndicator);
-                if(list == null) list = new ArrayList<>();
+        final NumberPicker np = new NumberPicker(getContext());
+        np.setMinValue(3);
+        np.setMaxValue(6);
+        ll.addView(np);
 
-                boolean flag;
-                do {
-                    flag = false;
-                    newId = createRandomString(5);
-                    for(Room r:list)
-                        if(r.getRoomId().equals(newId))
-                            flag = true;
-                }while (flag);
+        new AlertDialog.Builder(getContext())
+                .setTitle("プレイ人数")
+                .setCancelable(true)
+                .setPositiveButton("NEXT", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        final ProgressDialog progressDialog = new ProgressDialog(getContext());
+                        progressDialog.setTitle("準備中");
+                        progressDialog.setMessage("しばらくお待ち下さい...");
+                        progressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+                        progressDialog.setCancelable(false);
+                                            progressDialog.show();
 
-                activity.room.setRoomId(newId);
-                list.add(activity.room);
-                ref.setValue(list);
-
-                LinearLayout ll = new LinearLayout(getContext());
-                ll.setOrientation(LinearLayout.VERTICAL);
-
-                final NumberPicker np = new NumberPicker(getContext());
-                np.setMinValue(3);
-                np.setMaxValue(6);
-                ll.addView(np);
-
-                progressDialog.hide();
-                new AlertDialog.Builder(getContext())
-                        .setTitle("プレイ人数")
-                        .setCancelable(true)
-                        .setPositiveButton("NEXT", new DialogInterface.OnClickListener() {
+                        final DatabaseReference ref = mDatabase.getReference("room");
+                        ref.addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
-                            public void onClick(DialogInterface dialog, int which) {
+                            public void onDataChange(DataSnapshot dataSnapshot) {
+                                GenericTypeIndicator<ArrayList<Room>> genericTypeIndicator = new GenericTypeIndicator<ArrayList<Room>>() {};
+                                ArrayList<Room> list = dataSnapshot.getValue(genericTypeIndicator);
+                                if(list == null) list = new ArrayList<>();
+
+                                boolean flag;
+                                do {
+                                    flag = false;
+                                    newId = createRandomString(5);
+                                    for(Room r:list)
+                                        if(r.getRoomId().equals(newId))
+                                            flag = true;
+                                }while (flag);
+
+                                activity.room.setRoomId(newId);
+                                activity.room.setPhase(0);
                                 activity.room.setPlayerNum(np.getValue());
+                                list.add(activity.room);
+                                ref.setValue(list);
+
+
+                                progressDialog.hide();
                                 FragmentTransaction transaction = getFragmentManager().beginTransaction();
                                 transaction.replace(R.id.fragment,new SetPositionFragment());
                                 transaction.addToBackStack(null);
                                 transaction.commit();
-                            }
-                        })
-                        .setNegativeButton("CANSEL", null)
-                        .setView(ll)
-                        .show();
-            }
 
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                databaseError.toException().printStackTrace();
-                System.out.println("error"+databaseError.getDetails());
-                progressDialog.hide();
-                Toast.makeText(getContext(),"エラーが発生しました。",Toast.LENGTH_SHORT).show();
-            }
-        });
+                            }
+
+                            @Override
+                            public void onCancelled(DatabaseError databaseError) {
+                                databaseError.toException().printStackTrace();
+                                System.out.println("error"+databaseError.getDetails());
+                                progressDialog.hide();
+                                Toast.makeText(getContext(),"エラーが発生しました。",Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                })
+                .setNegativeButton("CANSEL", null)
+                .setView(ll)
+                .show();
     }
 
     static String createRandomString( int size ) {

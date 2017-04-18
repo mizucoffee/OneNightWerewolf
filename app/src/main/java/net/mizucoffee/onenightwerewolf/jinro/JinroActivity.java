@@ -56,6 +56,7 @@ public class JinroActivity extends AppCompatActivity {
 
         room.setSeer(null);
         room.setSwap(null);
+        room.setPoll(null);
 
         send();
     }

@@ -24,7 +24,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="32dp" />
 
-    <TextView
+    <net.mizucoffee.onenightwerewolf.tools.FontFitTextView
         android:id="@+id/resultTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -32,7 +32,8 @@
         android:paddingTop="@dimen/activity_vertical_margin"
         android:text="人狼陣営勝利"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textSize="48dp" />
+        android:textSize="48dp"
+        android:lines="1"/>
 
     <ScrollView
         android:id="@+id/scrollView2"

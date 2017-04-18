@@ -24,9 +24,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 
+import net.mizucoffee.onenightwerewolf.Jinro;
 import net.mizucoffee.onenightwerewolf.R;
 import net.mizucoffee.onenightwerewolf.Room;
-import net.mizucoffee.onenightwerewolf.old.Jinro;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -59,12 +59,12 @@ public class CardFragment extends Fragment{
         super.onCreateView(inflater, container, savedInstanceState);
         int layout = R.layout.activity;
         switch (activity.room.getCards().get(activity.room.getPlayerCount())){
-            case 0: layout = R.layout.activity_card_jinro;    break;
-            case 1: layout = R.layout.activity_card_seer;     break;
-            case 2: layout = R.layout.activity_card_robber;   break;
-            case 3: layout = R.layout.activity_card_minion;   break;
-            case 4: layout = R.layout.activity_card_tanner;   break;
-            case 5: layout = R.layout.activity_card_villager; break;
+            case Jinro.WEREWOLF: layout = R.layout.activity_card_jinro;    break;
+            case Jinro.SEER: layout = R.layout.activity_card_seer;     break;
+            case Jinro.MINION: layout = R.layout.activity_card_minion;   break;
+            case Jinro.ROBBER: layout = R.layout.activity_card_robber;   break;
+            case Jinro.TANNER: layout = R.layout.activity_card_tanner;   break;
+            case Jinro.VILLAGER: layout = R.layout.activity_card_villager; break;
         }
         return inflater.inflate(layout, container, false);
     }
@@ -95,7 +95,7 @@ public class CardFragment extends Fragment{
 
         switch (activity.room.getCards().get(activity.room.getPlayerCount())){
 
-            case 1:
+            case Jinro.SEER:
                 LinearLayout ll = (LinearLayout)view.findViewById(R.id.ll);
 
                 btn = new Button[activity.room.getPlayerNum() + 1];
@@ -134,7 +134,7 @@ public class CardFragment extends Fragment{
                 ll.addView(btn[activity.room.getPlayerNum()]);
 
                 break;
-            case 2:
+            case Jinro.ROBBER:
                 LinearLayout lll = (LinearLayout)view.findViewById(R.id.ll);
 
                 btn = new Button[activity.room.getPlayerNum()];
@@ -158,7 +158,7 @@ public class CardFragment extends Fragment{
 
                 }
                 break;
-            case 0:
+            case Jinro.WEREWOLF:
                 int count = 0;
                 for(int i:activity.room.getCards()) if(i == Jinro.WEREWOLF) count ++;
                 if(count >= 2) {
@@ -172,9 +172,9 @@ public class CardFragment extends Fragment{
                         }
                     }
                 }
-            case 3:
-            case 4:
-            case 5:
+            case Jinro.TANNER:
+            case Jinro.MINION:
+            case Jinro.VILLAGER:
                 nextBtn = (Button)view.findViewById(R.id.nextBtn);
                 nextBtn.setOnClickListener(next);
                 break;

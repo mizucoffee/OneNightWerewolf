@@ -2,6 +2,15 @@
 <items version="2" >
 
     <item
+        is-multidex="false"
+        jar="C:\Users\Mizucofee\.android\build-cache\7e4c7ed8db5ab70e0e3284dde1e2908858fcf70c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6d518c473dd671979903fd4aa5d6b4cee0d00a2a">
+        <dex dex="C:\Users\Mizucofee\Documents\GitHub\OneNightWerewolf\app\build\intermediates\pre-dexed\debug\classes_fbfbcefd9d988eef4a7a95e2bb1adb6c7a9919fc.jar" />
+    </item>
+    <item
         is-multidex="true"
         jar="C:\Users\Mizucofee\Documents\GitHub\OneNightWerewolf\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
         jumboMode="true"
@@ -12,12 +21,201 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\Mizucofee\.android\build-cache\728f9f6e0cc37db469f6e869ee29b178a645a5ca\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6f65c144283b31b4b9a70e6e7aa4c4a1c897d4b8">
+        <dex dex="C:\Users\Mizucofee\Documents\GitHub\OneNightWerewolf\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_e5dfda39639dda19563943a3c0913adc345e6099\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mizucofee\.android\build-cache\1a4b3a76f0aeb483385b3b191809f137afd5cddd\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7ff77725723167163d69439e3fd077bd0899babf">
+        <dex dex="C:\Users\Mizucofee\Documents\GitHub\OneNightWerewolf\app\build\intermediates\pre-dexed\debug\classes_891d800e212e026a8915d6be4149c8130809528e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mizucofee\.android\build-cache\9745802ca230626be4218bb07b039d12bbcd11fb\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8010ae6ed32828a145b25ec97bc07b7a83c6318f">
+        <dex dex="C:\Users\Mizucofee\Documents\GitHub\OneNightWerewolf\app\build\intermediates\pre-dexed\debug\classes_672be296af076f086549609e662ae78e5814b53c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mizucofee\.android\build-cache\4f17deab5a5bad7c8813d290a3b74174db717498\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2c12397a785c3b1868fbebeffc9553457b27803f">
+        <dex dex="C:\Users\Mizucofee\Documents\GitHub\OneNightWerewolf\app\build\intermediates\pre-dexed\debug\classes_ab26d4d2eba2b5111e587d1ddabd6735593a6248.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mizucofee\.android\build-cache\070ec50880996faad7f0fdf940650988f631d010\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="C:\Users\Mizucofee\Documents\GitHub\OneNightWerewolf\app\build\intermediates\pre-dexed\debug\classes_46ac01889eacbd879cb61c55a8c0f7f8458b04ae.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mizucofee\.android\build-cache\cd485b8c024e6d14e36d11f364d8641f54111ab8\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="C:\Users\Mizucofee\Documents\GitHub\OneNightWerewolf\app\build\intermediates\pre-dexed\debug\classes_218cedf3230c06ea46a9dfc2393bf8de662b8348.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mizucofee\.android\build-cache\d2af8a2451ca50fc1acf72719b72fff952ac71ed\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="02cc9f2e5899415add52bc716602b6b38e7eeb99">
+        <dex dex="C:\Users\Mizucofee\Documents\GitHub\OneNightWerewolf\app\build\intermediates\pre-dexed\debug\classes_7305ec8d765e674d9e629e4b5b0701ef319ba874.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mizucofee\.android\build-cache\a5ec2438959d5e7c12f6fe63db4fcd0d20d1716f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="C:\Users\Mizucofee\Documents\GitHub\OneNightWerewolf\app\build\intermediates\pre-dexed\debug\classes_470d91563bbcd39371203a641c950c2bf43853a7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mizucofee\.android\build-cache\8969d8b660492991ba6d660e2f4e80450d174cde\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="288913b440a3c61c30aa171095453a605432277a">
+        <dex dex="C:\Users\Mizucofee\Documents\GitHub\OneNightWerewolf\app\build\intermediates\pre-dexed\debug\classes_00a96d0125a3063dd2a257e495e9cd0785238313.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Mizucofee\.android\build-cache\f781cf57f4aca04c66a6b16776e146011f076b84\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0dc8ab07eeceda5e99b305c8069765056b6e5c9d">
+        <dex dex="C:\Users\Mizucofee\Documents\GitHub\OneNightWerewolf\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_efdd6d96c45dec6274cd75cfe46be7451f9a3a0e\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mizucofee\.android\build-cache\5bf7bc3365d60ef631c6f365b5adec6589f6d1fc\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b42cf2134829f715edfa2adaf0ee246631322dba">
+        <dex dex="C:\Users\Mizucofee\Documents\GitHub\OneNightWerewolf\app\build\intermediates\pre-dexed\debug\classes_6f8e8bd083311cb6f4f7bd71e4ddaf64b22a6809.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mizucofee\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="C:\Users\Mizucofee\Documents\GitHub\OneNightWerewolf\app\build\intermediates\pre-dexed\debug\library-2.4.0_3fb36271d9d7adbaf73afffd36c9acf05ca18c0d.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Mizucofee\.android\build-cache\a60aa4113b633c8959ef01e3e818633a3ba24c93\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ea4b54dcbfe5ac05efb0a314105f07258118d3a7">
+        <dex dex="C:\Users\Mizucofee\Documents\GitHub\OneNightWerewolf\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_02a8c5d3faf7f692755d424fdd06ce1a6961559c\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mizucofee\.android\build-cache\5586896a6fcfb67cc54a75d7903828ebc3854f56\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8f128aeeb7e31271b28a7adb9dac1f3a6ed9f5e7">
+        <dex dex="C:\Users\Mizucofee\Documents\GitHub\OneNightWerewolf\app\build\intermediates\pre-dexed\debug\classes_28d663442041cd2eafc33bc557991412672b6254.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mizucofee\.android\build-cache\d4ee6c95d0cde8028c7ae72dd205f51005f6a792\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="cc03ddac6017ba6366944c3eb01efc8751a00a6b">
+        <dex dex="C:\Users\Mizucofee\Documents\GitHub\OneNightWerewolf\app\build\intermediates\pre-dexed\debug\classes_b95f11159d7d92e924686c14af857473f522edcc.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mizucofee\.android\build-cache\b4e52f5d9d2e7872661b53f916550fc0aa7c7f8f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="C:\Users\Mizucofee\Documents\GitHub\OneNightWerewolf\app\build\intermediates\pre-dexed\debug\classes_880e094a452962825fa055503ece15a1c40f25f0.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Mizucofee\.android\build-cache\15ad18454d4084af2b4af29f7a439683c5edcd3f\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="4ef8ab5fee042023018249474bc93bd4b2b9c17e">
+        <dex dex="C:\Users\Mizucofee\Documents\GitHub\OneNightWerewolf\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_6c3213179e4da8a99696c859f7bfb5e0da024790\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mizucofee\.android\build-cache\d3147c62a1f3afde2186fe1d6432b8adfb300c41\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ed6b455e3dd7bbf1ff31f8df0b41e2f0d87f3ace">
+        <dex dex="C:\Users\Mizucofee\Documents\GitHub\OneNightWerewolf\app\build\intermediates\pre-dexed\debug\classes_e81d1b087daab2f3f1509304183fc06f9bbd76d5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mizucofee\.android\build-cache\f2d324424e1ef4be8538b69fb93a7b69abcc84c5\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="C:\Users\Mizucofee\Documents\GitHub\OneNightWerewolf\app\build\intermediates\pre-dexed\debug\classes_3aa67759dcffacec16e8e36fe8d770fe9fbc3a1c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mizucofee\.android\build-cache\e3e747e8c4376d933158edfd6998a8991e4f28b6\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="a319fd4d548ba4cc9511561d37109ba922bfbf6a">
+        <dex dex="C:\Users\Mizucofee\Documents\GitHub\OneNightWerewolf\app\build\intermediates\pre-dexed\debug\classes_e2289b3f4311125f66f479fecc70f45cf2f49d0a.jar" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\Mizucofee\Documents\GitHub\OneNightWerewolf\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="a3f7649f3618e6913434c1f00d9aa31c20bc6ef8">
+        sha1="246c36d5273ffb502f7bad839e62d7d48468ee6b">
         <dex dex="C:\Users\Mizucofee\Documents\GitHub\OneNightWerewolf\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_8014db178268d2bcf837dda6dde11ee7f408a79e\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\Mizucofee\.android\build-cache\12f9252d8334fe58f736ace99c7f6bb51088b2ab\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="C:\Users\Mizucofee\Documents\GitHub\OneNightWerewolf\app\build\intermediates\pre-dexed\debug\classes_e9411d2f2411b03a862cc21b6b3a4680c099bd46.jar" />
     </item>
 
 </items>

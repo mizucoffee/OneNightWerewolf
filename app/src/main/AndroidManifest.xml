@@ -7,54 +7,11 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <application
-        android:name=".old.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:screenOrientation="portrait"
         android:supportsRtl="true">
-        <activity
-            android:name=".old.MainActivity"
-            android:screenOrientation="portrait"
-            android:theme="@style/MorningTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".old.SetPositionActivity"
-            android:theme="@style/DayTheme" />
-        <activity
-            android:name=".old.SetUsernameActivity"
-            android:theme="@style/EveningTheme" />
-
-        <meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="81d3359502772e5911bd72319039578847ffbbcd" />
-
-        <activity
-            android:name=".old.CardServeActivity"
-            android:theme="@style/NightTheme" />
-        <activity
-            android:name=".old.CardActivity"
-            android:theme="@style/NightTheme" />
-        <activity
-            android:name=".old.CountActivity"
-            android:theme="@style/MorningTheme" />
-        <activity
-            android:name=".old.PollActivity"
-            android:theme="@style/DayTheme" />
-        <activity
-            android:name=".old.PollServeActivity"
-            android:theme="@style/DayTheme" />
-        <activity
-            android:name=".old.KillActivity"
-            android:theme="@style/EveningTheme" />
-        <activity
-            android:name=".old.ResultActivity"
-            android:theme="@style/EveningTheme" />
         <activity
             android:name=".welcome.WelcomeActivity"
             android:theme="@style/MorningTheme">

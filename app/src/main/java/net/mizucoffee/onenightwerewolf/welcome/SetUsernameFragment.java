@@ -174,6 +174,7 @@ public class SetUsernameFragment extends Fragment{
                     }
                 }
                 activity.room.setPlayers(players);
+                activity.room.setPhase(2);
 
                 ref.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override

@@ -1,200 +1,201 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
-        <variable
-            name="position"
-            type="net.mizucoffee.onenightwerewolf.welcome.SetPositionFragment" />
+        <variable name="position" type="net.mizucoffee.onenightwerewolf.welcome.SetPositionFragment"/>
     </data>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:baselineAligned="false"
+    android:background="@drawable/background">
 
-    <LinearLayout
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/background"
-        android:baselineAligned="false"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:popupTheme="@style/Theme.AppCompat.Light" />
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/scrollView"
+        android:layout_weight="1">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
-            android:minHeight="?attr/actionBarSize"
-            app:popupTheme="@style/Theme.AppCompat.Light" />
-
-        <ScrollView
-            android:id="@+id/scrollView"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1">
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            android:orientation="vertical">
 
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:paddingBottom="@dimen/activity_vertical_margin"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:paddingRight="@dimen/activity_horizontal_margin"
-                android:paddingTop="@dimen/activity_vertical_margin">
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
                 <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="16dp">
 
-                    <LinearLayout
+                    <net.kianoni.fontloader.TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text='@{@string/werewolf + ": " + (position.werewolf + 1)}'
+                        app:fontFile="mplus-1c-light.ttf"
+                        android:textColor="@color/textColorPrimary" />
+
+                    <SeekBar
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginBottom="16dp"
-                        android:orientation="horizontal">
+                        android:layout_height="wrap_content"
+                        android:max="1"
+                        android:progress="@={position.werewolf}"
+                        android:id="@+id/werewolfSb"
+                        android:layout_gravity="center_vertical"
+                        android:onProgressChanged="@{position.progressChanged}"/>
 
-                        <net.kianoni.fontloader.TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text='@{@string/werewolf + ": " + (position.werewolf + 1)}'
-                            android:textColor="@color/textColorPrimary"
-                            android:textSize="20sp"
-                            app:fontFile="mplus-1c-light.ttf" />
+                </LinearLayout>
 
-                        <SeekBar
-                            android:id="@+id/werewolfSb"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:max="1"
-                            android:onProgressChanged="@{position.progressChanged}"
-                            android:progress="@={position.werewolf}" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="16dp">
 
-                    </LinearLayout>
+                    <net.kianoni.fontloader.TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text='@{@string/seer + ": " + position.seer}'
+                        app:fontFile="mplus-1c-light.ttf"
+                        android:textColor="@color/textColorPrimary"/>
 
-                    <LinearLayout
+                    <SeekBar
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginBottom="16dp"
-                        android:orientation="horizontal">
+                        android:layout_height="wrap_content"
+                        android:max="2"
+                        android:progress="@={position.seer}"
+                        android:id="@+id/seerSb"
+                        android:layout_gravity="center_vertical"
+                        android:onProgressChanged="@{position.progressChanged}"/>
+                </LinearLayout>
 
-                        <net.kianoni.fontloader.TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text='@{@string/seer + ": " + position.seer}'
-                            android:textColor="@color/textColorPrimary"
-                            android:textSize="20sp"
-                            app:fontFile="mplus-1c-light.ttf" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="16dp">
 
-                        <SeekBar
-                            android:id="@+id/seerSb"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:max="2"
-                            android:onProgressChanged="@{position.progressChanged}"
-                            android:progress="@={position.seer}" />
-                    </LinearLayout>
+                    <net.kianoni.fontloader.TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text='@{@string/minion + ": " + position.minion}'
+                        app:fontFile="mplus-1c-light.ttf"
+                        android:textColor="@color/textColorPrimary"
+                        />
 
-                    <LinearLayout
+                    <SeekBar
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginBottom="16dp"
-                        android:orientation="horizontal">
+                        android:layout_height="wrap_content"
+                        android:max="2"
+                        android:progress="@={position.minion}"
+                        android:id="@+id/minionSb"
+                        android:layout_gravity="center_vertical"
+                        android:onProgressChanged="@{position.progressChanged}"/>
+                </LinearLayout>
 
-                        <net.kianoni.fontloader.TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text='@{@string/minion + ": " + position.minion}'
-                            android:textColor="@color/textColorPrimary"
-                            android:textSize="20sp"
-                            app:fontFile="mplus-1c-light.ttf" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="16dp">
 
-                        <SeekBar
-                            android:id="@+id/robberSb"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:max="1"
-                            android:onProgressChanged="@{position.progressChanged}"
-                            android:progress="@={position.minion}" />
-                    </LinearLayout>
+                    <net.kianoni.fontloader.TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text='@{@string/robber + ": " + position.robber}'
+                        app:fontFile="mplus-1c-light.ttf"
+                        android:textColor="@color/textColorPrimary"
+                         />
 
-                    <LinearLayout
+                    <SeekBar
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginBottom="16dp"
-                        android:orientation="horizontal">
+                        android:layout_height="wrap_content"
+                        android:max="2"
+                        android:progress="@={position.robber}"
+                        android:id="@+id/robberSb"
+                        android:layout_gravity="center_vertical"
+                        android:onProgressChanged="@{position.progressChanged}"/>
 
-                        <net.kianoni.fontloader.TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text='@{@string/robber + ": " + position.robber}'
-                            android:textColor="@color/textColorPrimary"
-                            android:textSize="20sp"
-                            app:fontFile="mplus-1c-light.ttf" />
+                </LinearLayout>
 
-                        <SeekBar
-                            android:id="@+id/minionSb"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:max="2"
-                            android:onProgressChanged="@{position.progressChanged}"
-                            android:progress="@={position.robber}" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="16dp">
 
-                    </LinearLayout>
-
-                    <LinearLayout
+                    <net.kianoni.fontloader.TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text='@{@string/tanner + ": " + position.tanner}'
+                        app:fontFile="mplus-1c-light.ttf"
+                        android:textColor="@color/textColorPrimary"
+                         />
+                    <SeekBar
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginBottom="16dp"
-                        android:orientation="horizontal">
+                        android:layout_height="wrap_content"
+                        android:max="1"
+                        android:progress="@={position.tanner}"
+                        android:id="@+id/tannerSb"
+                        android:layout_gravity="center_vertical"
+                        android:onProgressChanged="@{position.progressChanged}"/>
+                </LinearLayout>
 
-                        <net.kianoni.fontloader.TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text='@{@string/tanner + ": " + position.tanner}'
-                            android:textColor="@color/textColorPrimary"
-                            android:textSize="20sp"
-                            app:fontFile="mplus-1c-light.ttf" />
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="16dp">
 
-                        <SeekBar
-                            android:id="@+id/tannerSb"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center_vertical"
-                            android:max="1"
-                            android:onProgressChanged="@{position.progressChanged}"
-                            android:progress="@={position.tanner}" />
-                    </LinearLayout>
+                    <net.kianoni.fontloader.TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="20sp"
+                        android:text='@{@string/villager + ": " + (position.playerNum - (position.werewolf + position.seer + position.robber + position.minion + position.tanner) + 1)}'
+                        app:fontFile="mplus-1c-light.ttf"
+                        android:textColor="@color/textColorPrimary"
+                         />
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginBottom="16dp"
-                        android:orientation="horizontal">
-
-                        <net.kianoni.fontloader.TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text='@{@string/villager + ": " + (position.playerNum - (position.werewolf + position.seer + position.robber + position.minion + position.tanner) + 1)}'
-                            android:textColor="@color/textColorPrimary"
-                            android:textSize="20sp"
-                            app:fontFile="mplus-1c-light.ttf" />
-
-                    </LinearLayout>
                 </LinearLayout>
             </LinearLayout>
-        </ScrollView>
+        </LinearLayout>
+    </ScrollView>
 
-        <Button
-            android:id="@+id/nextBtn"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:background="@drawable/next_btn_back"
-            android:gravity="center"
-            android:onClick="@{position::next}"
-            android:text="NEXT"
-            android:textColor="#ffffff"
-            android:textSize="16sp" />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="NEXT"
+        android:id="@+id/nextBtn"
+        android:background="@drawable/next_btn_back"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:onClick="@{position::next}"
+        android:textSize="16sp" />
 
-    </LinearLayout>
+</LinearLayout>
 </layout>
