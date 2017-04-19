@@ -80,7 +80,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="48dp"
                 android:text="Jinrou"
-                android:textColor="#006064"
+                android:textColor="#b71c1c"
                 android:textSize="96dp"
                 app:fontFile="mplus-1c-thin.ttf" />
 
@@ -92,7 +92,7 @@
                 android:layout_alignRight="@+id/textView"
                 android:layout_alignTop="@+id/textView"
                 android:text="OneNight"
-                android:textColor="#006064"
+                android:textColor="#b71c1c"
                 android:textSize="36dp"
                 app:fontFile="mplus-1c-thin.ttf" />
 

@@ -220,9 +220,6 @@ public class ResultFragment extends Fragment {
                 resultTv.setText("人狼勝利 - 狂人死亡");
                 for (int i = 0; i != activity.room.getPlayerNum(); i++)
                     if(card.get(i) == Jinro.WEREWOLF)
-                        points.set(i,points.get(i) + 1);
-                for (int i = 0; i != activity.room.getPlayerNum(); i++)
-                    if(card.get(i) == Jinro.MINION)
                         points.set(i,points.get(i) + 2);
                 break;
             case Jinro.TANNER_NORMAL:
@@ -234,6 +231,8 @@ public class ResultFragment extends Fragment {
         }
         activity.room.setPoint(points);
         activity.room.setPhase(6);
+        activity.room.setSwappedCards(card);
+        activity.room.setWinner(Jinro.checkWinner(activity.room.getPoll(),activity.room.getCards(),activity.room.getSwap()));
         activity.send();
 
         LinearLayout ll5 = (LinearLayout)view.findViewById(R.id.ll5);

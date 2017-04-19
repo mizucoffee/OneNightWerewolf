@@ -3,6 +3,7 @@ package net.mizucoffee.onenightwerewolf.jinro;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -112,6 +113,7 @@ public class CardFragment extends Fragment{
                     btn[i].setPadding(0,16,0,16);
                     btn[i].setBackgroundResource(R.drawable.next_btn_back);
                     btn[i].setTextSize(24);
+                    btn[i].setTextColor(Color.WHITE);
                     btn[i].setOnClickListener(seer);
                     ViewCompat.setElevation(btn[i],0);
 
@@ -128,6 +130,7 @@ public class CardFragment extends Fragment{
                 btn[activity.room.getPlayerNum()].setPadding(0,16,0,16);
                 btn[activity.room.getPlayerNum()].setBackgroundResource(R.drawable.next_btn_back);
                 btn[activity.room.getPlayerNum()].setTextSize(24);
+                btn[activity.room.getPlayerNum()].setTextColor(Color.WHITE);
                 btn[activity.room.getPlayerNum()].setOnClickListener(seer);
                 ViewCompat.setElevation(btn[activity.room.getPlayerNum()],0);
 
@@ -151,6 +154,7 @@ public class CardFragment extends Fragment{
                     btn[i].setPadding(0,16,0,16);
                     btn[i].setBackgroundResource(R.drawable.next_btn_back);
                     btn[i].setTextSize(24);
+                    btn[i].setTextColor(Color.WHITE);
                     btn[i].setOnClickListener(robber);
                     ViewCompat.setElevation(btn[i],0);
 

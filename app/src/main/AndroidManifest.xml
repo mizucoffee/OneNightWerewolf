@@ -14,7 +14,7 @@
         android:supportsRtl="true">
         <activity
             android:name=".welcome.WelcomeActivity"
-            android:theme="@style/MorningTheme">
+            android:theme="@style/EveningTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

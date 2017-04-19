@@ -13,8 +13,38 @@ public class Room {
     private ArrayList<String> players; // 不変 プレイヤー名 ポジション==プレイヤーID
     private ArrayList<Integer> cards;  // 可変 プレイヤーのカード
     private ArrayList<Integer> swap;   // 可変 スワップ先プレイヤーID
+    private ArrayList<Integer> swappedCards;   // 可変 スワップ先プレイヤーID
     private ArrayList<Integer> seer;   // 可変 占い先プレイヤーID
     private ArrayList<Integer> poll;   // 可変 投票先プレイヤーID
+    private ArrayList<Integer> kill;   // 可変 死亡プレイヤーID
+    private ArrayList<Integer> point;  // 可変 プレイヤーのポイント
+    private int playerNum;             // 不変 プレイヤー人数
+    private int playerCount;           // 可変 クラスチェック時及び投票時のプレイヤーID
+    private int countDown;             // 可変 残時間
+    private int winner;
+
+    private int werewolf;
+    private int seerc;
+    private int robber;
+    private int minion;
+    private int tanner;
+    private int villager;
+
+    public ArrayList<Integer> getSwappedCards() {
+        return swappedCards;
+    }
+
+    public void setSwappedCards(ArrayList<Integer> swappedCards) {
+        this.swappedCards = swappedCards;
+    }
+
+    public int getWinner() {
+        return winner;
+    }
+
+    public void setWinner(int winner) {
+        this.winner = winner;
+    }
 
     public ArrayList<Integer> getKill() {
         return kill;
@@ -23,19 +53,6 @@ public class Room {
     public void setKill(ArrayList<Integer> kill) {
         this.kill = kill;
     }
-
-    private ArrayList<Integer> kill;   // 可変 死亡プレイヤーID
-    private ArrayList<Integer> point;  // 可変 プレイヤーのポイント
-    private int playerNum;             // 不変 プレイヤー人数
-    private int playerCount;           // 可変 クラスチェック時及び投票時のプレイヤーID
-    private int countDown;             // 可変 残時間
-
-    private int werewolf;
-    private int seerc;
-    private int robber;
-    private int minion;
-    private int tanner;
-    private int villager;
 
     public int getWerewolf() {
         return werewolf;

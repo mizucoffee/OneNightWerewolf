@@ -54,7 +54,7 @@
                         android:textSize="20sp"
                         android:text='@{@string/werewolf + ": " + (position.werewolf + 1)}'
                         app:fontFile="mplus-1c-light.ttf"
-                        android:textColor="@color/textColorPrimary" />
+                        android:textColor="?android:textColorPrimary" />
 
                     <SeekBar
                         android:layout_width="match_parent"
@@ -79,7 +79,7 @@
                         android:textSize="20sp"
                         android:text='@{@string/seer + ": " + position.seer}'
                         app:fontFile="mplus-1c-light.ttf"
-                        android:textColor="@color/textColorPrimary"/>
+                        android:textColor="?android:textColorPrimary"/>
 
                     <SeekBar
                         android:layout_width="match_parent"
@@ -103,7 +103,7 @@
                         android:textSize="20sp"
                         android:text='@{@string/minion + ": " + position.minion}'
                         app:fontFile="mplus-1c-light.ttf"
-                        android:textColor="@color/textColorPrimary"
+                        android:textColor="?android:textColorPrimary"
                         />
 
                     <SeekBar
@@ -128,7 +128,7 @@
                         android:textSize="20sp"
                         android:text='@{@string/robber + ": " + position.robber}'
                         app:fontFile="mplus-1c-light.ttf"
-                        android:textColor="@color/textColorPrimary"
+                        android:textColor="?android:textColorPrimary"
                          />
 
                     <SeekBar
@@ -154,7 +154,7 @@
                         android:textSize="20sp"
                         android:text='@{@string/tanner + ": " + position.tanner}'
                         app:fontFile="mplus-1c-light.ttf"
-                        android:textColor="@color/textColorPrimary"
+                        android:textColor="?android:textColorPrimary"
                          />
                     <SeekBar
                         android:layout_width="match_parent"
@@ -178,7 +178,7 @@
                         android:textSize="20sp"
                         android:text='@{@string/villager + ": " + (position.playerNum - (position.werewolf + position.seer + position.robber + position.minion + position.tanner) + 1)}'
                         app:fontFile="mplus-1c-light.ttf"
-                        android:textColor="@color/textColorPrimary"
+                        android:textColor="?android:textColorPrimary"
                          />
 
                 </LinearLayout>

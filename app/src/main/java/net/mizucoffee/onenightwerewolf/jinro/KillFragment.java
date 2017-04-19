@@ -109,6 +109,9 @@ public class KillFragment extends Fragment {
             sa.setText("本日は");
             playerTv.setText("処刑者が0人");
             sb.setText("でした");
+            activity.room.setKill(null);
+            activity.room.setPhase(5);
+            activity.send();
         } else {
 
             String name = "";

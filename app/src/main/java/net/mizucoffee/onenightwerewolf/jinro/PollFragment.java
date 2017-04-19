@@ -1,6 +1,7 @@
 package net.mizucoffee.onenightwerewolf.jinro;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -92,6 +93,7 @@ public class PollFragment extends Fragment {
             btn[i].setPadding(0,16,0,16);
             btn[i].setBackgroundResource(R.drawable.next_btn_back);
             btn[i].setTextSize(24);
+            btn[i].setTextColor(Color.WHITE);
             btn[i].setOnClickListener(poll);
             ViewCompat.setElevation(btn[i],0);
 

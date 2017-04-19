@@ -101,6 +101,7 @@ public class CountFragment extends Fragment {
         cdt.cancel();
 
         activity.room.setPhase(4);
+        activity.send();
 
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         transaction.replace(R.id.fragment,new CheckNameFragment());

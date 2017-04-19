@@ -4,14 +4,14 @@
     <!-- ボタンが押されている -->
     <item android:state_pressed="true">
         <shape>
-            <solid android:color="@color/colorPrimaryDark"/>
+            <solid android:color="@color/colorPrimary"/>
         </shape>
     </item>
 
     <!-- ボタンが押されていない -->
     <item android:state_pressed="false">
         <shape>
-            <solid android:color="@color/colorPrimary"/>
+            <solid android:color="@color/colorPrimaryDark"/>
         </shape>
     </item>
 
